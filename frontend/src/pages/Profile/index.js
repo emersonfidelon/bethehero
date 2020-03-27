@@ -9,21 +9,45 @@ import logoImg from '../../assets/logo.svg';
 
 export default function Profile() {
   const [incidents, setIncidents] = useState([]);
+  
+  const history = useHistory();
 
   const ongId = localStorage.getItem('ongId');
   const ongName = localStorage.getItem('ongName');
 
-  const history = useHistory();
+  useEffect(() => {
+    let mounted = false;
+
+    const loadIncidents = async () => {
+      try {
+        if(!mounted){
+          const response = await api.get('profile', {
+            headers: {
+              Authorization: ongId
+            }
+          });
+            
+          setIncidents(response.data);
+        }
+      } catch (error) {
+        if(!mounted){
+          alert('Erro ao carregar os casos!');
+        }
+      }
+    };
+    
+    loadIncidents();
+
+    return () => {
+      mounted = true;
+    }
+  }, [ongId]);
 
   useEffect(() => {
-    api.get('profile', {
-      headers: {
-        Authorization: ongId
-      }
-    }).then(response => {
-      setIncidents(response.data);
-    })
-  }, [ongId]);
+    if(!ongId){
+      return handleLogout();
+    }
+  });
 
   async function handleDeleteIncident(id){
     try {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 
@@ -16,6 +16,12 @@ export default function NewIncident() {
   const history = useHistory();
 
   const ongId = localStorage.getItem('ongId');
+
+  useEffect(() => {
+    if(!ongId){
+      return history.push('/');
+    }
+  }, [ongId, history]);
 
   async function handleNewIncident(e) {
     e.preventDefault();
