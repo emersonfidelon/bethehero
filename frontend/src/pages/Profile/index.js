@@ -16,17 +16,23 @@ export default function Profile() {
   const ongName = localStorage.getItem('ongName');
 
   useEffect(() => {
+    if(!ongId){
+      return handleLogout();
+    }
+  });
+
+  useEffect(() => {
     let mounted = false;
 
     const loadIncidents = async () => {
       try {
+        const response = await api.get('profile', {
+          headers: {
+            Authorization: ongId
+          }
+        });
+        
         if(!mounted){
-          const response = await api.get('profile', {
-            headers: {
-              Authorization: ongId
-            }
-          });
-            
           setIncidents(response.data);
         }
       } catch (error) {
@@ -42,12 +48,6 @@ export default function Profile() {
       mounted = true;
     }
   }, [ongId]);
-
-  useEffect(() => {
-    if(!ongId){
-      return handleLogout();
-    }
-  });
 
   async function handleDeleteIncident(id){
     try {
