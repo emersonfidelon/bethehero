@@ -5,14 +5,15 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 24,
-    paddingTop: Constants.statusBarHeight + 20
+    paddingTop: Constants.statusBarHeight + 20,
+    backgroundColor: '#000'
   },
 
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center'
-  },
+  }, 
 
   headerText: {
     fontSize: 15,
@@ -27,7 +28,7 @@ export default StyleSheet.create({
     fontSize: 30,
     marginBottom: 16,
     marginTop: 48,
-    color: '#13131a',
+    color: '#737380',
     fontWeight: 'bold'
   },
 
@@ -44,9 +45,11 @@ export default StyleSheet.create({
   incident: {
     padding: 24,
     borderRadius: 8,
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
     marginBottom: 16,
-    marginTop: 48
+    marginTop: 48,
+    borderWidth: 1,
+    borderColor: '#737380'
   },
 
   incidentProperty: {
@@ -65,8 +68,8 @@ export default StyleSheet.create({
   heroTitle: {
     fontWeight: 'bold',
     fontSize: 20,
-    color: '#13131a',
-    lineHeight: 30
+    color: '#737380',
+    lineHeight: 30,
   },
 
   heroDescription: {

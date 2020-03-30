@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.8.1"
+  }
+}

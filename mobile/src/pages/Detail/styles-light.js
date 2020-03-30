@@ -5,8 +5,7 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 24,
-    paddingTop: Constants.statusBarHeight + 20,
-    backgroundColor: '#000'
+    paddingTop: Constants.statusBarHeight + 20
   },
 
   header: {
@@ -14,7 +13,7 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center'
   },
-
+  
   headerText: {
     fontSize: 15,
     color: '#737380'
@@ -24,16 +23,11 @@ export default StyleSheet.create({
     fontWeight: 'bold'
   },
 
-  changeTheme: {
-    paddingLeft: 10,
-    paddingVertical: 10
-  },
-
   title: {
     fontSize: 30,
     marginBottom: 16,
     marginTop: 48,
-    color: '#737380',
+    color: '#13131a',
     fontWeight: 'bold'
   },
 
@@ -50,33 +44,54 @@ export default StyleSheet.create({
   incident: {
     padding: 24,
     borderRadius: 8,
-    backgroundColor: '#000',
+    backgroundColor: '#fff',
     marginBottom: 16,
-    borderWidth: 1,
-    borderColor: '#41414d'
+    marginTop: 48
   },
 
   incidentProperty: {
     fontSize: 14,
     color: '#41414d',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginTop: 24
   },
 
   incidentValue: {
     marginTop: 8,
     fontSize: 15,
-    marginBottom: 24,
     color: '#737380'
   },
 
-  detailsButton: {
-    flexDirection:'row',
-    justifyContent: 'space-between',
-    alignItems:'center'
+  heroTitle: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    color: '#13131a',
+    lineHeight: 30
   },
 
-  detailsButtonText: {
-    color: "#e02041",
+  heroDescription: {
+    fontSize: 15,
+    color: '#737380',
+    marginTop: 16
+  },
+
+  actions: {
+    marginTop: 16,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+
+  action: {
+    backgroundColor: '#e02041',
+    borderRadius: 8,
+    height: 50,
+    width: '48%',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+
+  actionText: {
+    color: '#fff',
     fontSize: 15,
     fontWeight: 'bold'
   }
